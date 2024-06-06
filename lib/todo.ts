@@ -3,3 +3,7 @@ export interface Todo {
     title: string;
     completed: boolean;
 }
+
+export async function addToDo(newTodo: Todo) {
+    
+}
