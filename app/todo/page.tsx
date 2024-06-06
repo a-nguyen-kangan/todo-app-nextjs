@@ -4,7 +4,7 @@ import TodoList from "./todo-list";
 import type { Todo } from "@/lib/todo";
 
 export default async function Todo() {
-    const todos = await fetchAllTodos();
+  const todos = await fetchAllTodos();
     
     var todoList: Todo[] = [];
     

@@ -1,3 +1,6 @@
+'use client'
+
+import { addToDo } from "@/lib/todo";
 
 export default function AddTodo() {
 
@@ -11,11 +14,24 @@ export default function AddTodo() {
                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="todo-title" type="text" placeholder="Title" />
                 </div>
                 <div className="flex items-center justify-between">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={add}>
                         Submit
                     </button>
                 </div>
             </form>
         </div>
     );
+}
+
+async function add() {
+    const title = (document.getElementById('todo-title') as HTMLInputElement).value;
+    const res = await addToDo({
+        title: title,
+        completed: false
+    });
+
+    if (res.status === 201) {
+        alert('Todo added successfully');
+    }
+    console.log(res);
 }
