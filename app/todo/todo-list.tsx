@@ -4,7 +4,7 @@ export default function TodoList({ todos }: { todos: Todo[] }) {
 
     return (
         <div className="w-full">
-            <h1 className="text-2xl font-bold">Todo List</h1>
+            <h1 className="text-3xl font-bold text-center text-blue-500 ">Todo List</h1>
             <div className="grid grid-cols-3">
 
                 <div className="border border-slate-500"><p className="font-bold">id</p></div>
