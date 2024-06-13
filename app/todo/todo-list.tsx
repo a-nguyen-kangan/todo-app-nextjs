@@ -15,7 +15,7 @@ export default function TodoList({ todos }: { todos: Todo[] }) {
                 {todos.map((todo: Todo) => {
                     return (
                         <>
-                            <p className="border border-slate-500">{todo.id}</p>
+                            <p className="border border-slate-500"><span className="italic">{todo.id}</span></p>
                             <p className="border border-slate-500">{todo.title}</p>
                             <p className="border border-slate-500">{todo.completed ? 'Yes' : 'No'}</p>
                         </>
